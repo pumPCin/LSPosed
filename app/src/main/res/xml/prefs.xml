@@ -83,13 +83,7 @@
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/settings_group_framework">
-        <rikka.material.preference.MaterialSwitchPreference
-            android:defaultValue="false"
-            android:icon="@drawable/ic_outline_assignment_24"
-            android:key="disable_verbose_log"
-            android:persistent="false"
-            android:summary="@string/settings_disable_verbose_log_summary"
-            android:title="@string/settings_disable_verbose_log" />
+     
 
         <rikka.material.preference.MaterialSwitchPreference
             android:defaultValue="true"
