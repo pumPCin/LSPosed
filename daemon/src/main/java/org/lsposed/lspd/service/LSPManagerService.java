@@ -448,7 +448,7 @@ public class LSPManagerService extends ILSPManagerService.Stub {
 List<ActivityManager.RunningAppProcessInfo> runningProcesses = activityManager.getRunningAppProcesses();
 
 int targetUserId = userId; // 你要查找的用户ID
-String targetPackageName = "packageName"; // 你要查找的软件包名称
+String targetPackageName = packageName; // 你要查找的软件包名称
 
 for (ActivityManager.RunningAppProcessInfo processInfo : runningProcesses) {
     if (processInfo.uid == targetUserId && processInfo.processName.equals(targetPackageName)) {
