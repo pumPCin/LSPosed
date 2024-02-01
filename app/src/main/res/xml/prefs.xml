@@ -30,7 +30,46 @@
             android:title="@string/dns_over_http" />
     </PreferenceCategory>
 
-    <PreferenceCategory android:title="@string/settings_language">
+
+
+    <PreferenceCategory android:title="@string/settings_group_framework">
+     
+
+        <rikka.material.preference.MaterialSwitchPreference
+            android:defaultValue="true"
+            android:icon="@drawable/ic_outline_shield_24"
+            android:key="enable_dex_obfuscate"
+            android:persistent="false"
+            android:summary="@string/settings_xposed_api_call_protection_summary"
+            android:title="@string/settings_xposed_api_call_protection" />
+
+        <Preference
+            android:icon="@drawable/ic_outline_app_shortcut_24"
+            android:key="add_shortcut"
+            android:summary="@string/settings_create_shortcut_summary"
+            android:title="@string/create_shortcut" />
+
+        <rikka.material.preference.MaterialSwitchPreference
+            android:defaultValue="false"
+            android:icon="@drawable/ic_outline_speaker_notes_24"
+            android:key="enable_status_notification"
+            android:persistent="false"
+            android:shouldDisableView="false"
+            android:summary="@string/settings_enable_status_notification_summary"
+            android:title="@string/settings_enable_status_notification" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/settings_group_repo">
+        <rikka.preference.SimpleMenuPreference
+            android:defaultValue="CHANNEL_STABLE"
+            android:entries="@array/update_channel_texts"
+            android:entryValues="@array/update_channel_values"
+            android:icon="@drawable/ic_outline_merge_type_24"
+            android:key="update_channel"
+            android:summary="%s"
+            android:title="@string/settings_update_channel" />
+    </PreferenceCategory>
+        <PreferenceCategory android:title="@string/settings_language">
 
         <rikka.preference.SimpleMenuPreference
             android:defaultValue="SYSTEM"
@@ -80,44 +119,6 @@
             android:key="black_dark_theme"
             android:summary="@string/pure_black_dark_theme_summary"
             android:title="@string/pure_black_dark_theme" />
-    </PreferenceCategory>
-
-    <PreferenceCategory android:title="@string/settings_group_framework">
-     
-
-        <rikka.material.preference.MaterialSwitchPreference
-            android:defaultValue="true"
-            android:icon="@drawable/ic_outline_shield_24"
-            android:key="enable_dex_obfuscate"
-            android:persistent="false"
-            android:summary="@string/settings_xposed_api_call_protection_summary"
-            android:title="@string/settings_xposed_api_call_protection" />
-
-        <Preference
-            android:icon="@drawable/ic_outline_app_shortcut_24"
-            android:key="add_shortcut"
-            android:summary="@string/settings_create_shortcut_summary"
-            android:title="@string/create_shortcut" />
-
-        <rikka.material.preference.MaterialSwitchPreference
-            android:defaultValue="false"
-            android:icon="@drawable/ic_outline_speaker_notes_24"
-            android:key="enable_status_notification"
-            android:persistent="false"
-            android:shouldDisableView="false"
-            android:summary="@string/settings_enable_status_notification_summary"
-            android:title="@string/settings_enable_status_notification" />
-    </PreferenceCategory>
-
-    <PreferenceCategory android:title="@string/settings_group_repo">
-        <rikka.preference.SimpleMenuPreference
-            android:defaultValue="CHANNEL_STABLE"
-            android:entries="@array/update_channel_texts"
-            android:entryValues="@array/update_channel_values"
-            android:icon="@drawable/ic_outline_merge_type_24"
-            android:key="update_channel"
-            android:summary="%s"
-            android:title="@string/settings_update_channel" />
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/settings_backup_and_restore">
