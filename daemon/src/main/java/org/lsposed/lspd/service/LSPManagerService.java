@@ -443,34 +443,8 @@ public class LSPManagerService extends ILSPManagerService.Stub {
 
     @Override
     public void forceStopPackage(String packageName, int userId) throws RemoteException {
-        //ActivityManagerService.forceStopPackage(packageName, userId);
-        ActivityManager activityManager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
-List<ActivityManager.RunningAppProcessInfo> runningProcesses = activityManager.getRunningAppProcesses();
-
-int targetUserId = userId; // 你要查找的用户ID
-String targetPackageName = packageName; // 你要查找的软件包名称
-
-for (ActivityManager.RunningAppProcessInfo processInfo : runningProcesses) {
-    if (processInfo.uid == targetUserId && processInfo.processName.equals(targetPackageName)) {
-        int pid = processInfo.pid;
-        // 找到了对应的进程ID
-        //Log.d("ProcessID", "The process ID for package " + targetPackageName + " and user " + targetUserId + " is " + pid);
-        int targetPid = pid; // 你要结束的进程ID
-try {
-    Process suProcess = Runtime.getRuntime().exec("su");
-    DataOutputStream os = new DataOutputStream(suProcess.getOutputStream());
-    os.writeBytes("kill -9 " + targetPid + "\n");
-    os.flush();
-    os.writeBytes("exit\n");
-    os.flush();
-    suProcess.waitFor();
-} catch (IOException | InterruptedException e) {
-    e.printStackTrace();
-}
-
-    }
-}
-
+        ActivityManagerService.forceStopPackage(packageName, userId);
+        
     }
 
     @Override
