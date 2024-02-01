@@ -123,9 +123,9 @@ public class HomeFragment extends BaseFragment implements MenuProvider {
                         NavUtil.startURL(activity, getString(R.string.latest_url));
                     }
                 });*/
-                binding.updateCard.setVisibility(View.VISIBLE);
+                //binding.updateCard.setVisibility(View.VISIBLE);
            // } else {
-            //    binding.updateCard.setVisibility(View.GONE);
+                binding.updateCard.setVisibility(View.GONE);
             //}
             boolean dex2oatAbnormal = ConfigManager.getDex2OatWrapperCompatibility() != ILSPManagerService.DEX2OAT_OK && !ConfigManager.dex2oatFlagsLoaded();
             var sepolicyAbnormal = !ConfigManager.isSepolicyLoaded();
