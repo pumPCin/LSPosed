@@ -293,7 +293,7 @@ void Logcat::Run() {
     RefreshFd(true);
     RefreshFd(false);
 
-    EnsureLogWatchDog();
+    //EnsureLogWatchDog();
 
     while (true) {
         std::unique_ptr<logger_list, decltype(&android_logger_list_free)> logger_list{
@@ -330,6 +330,6 @@ JNIEXPORT void JNICALL
 Java_org_lsposed_lspd_service_LogcatService_runLogcat(JNIEnv *env, jobject thiz) {
     jclass clazz = env->GetObjectClass(thiz);
     jmethodID method = env->GetMethodID(clazz, "refreshFd", "(Z)I");
-    Logcat logcat(env, thiz, method);
-    logcat.Run();
+    //Logcat logcat(env, thiz, method);
+    //logcat.Run();
 }

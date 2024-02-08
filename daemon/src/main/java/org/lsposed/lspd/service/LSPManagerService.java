@@ -444,6 +444,7 @@ public class LSPManagerService extends ILSPManagerService.Stub {
     @Override
     public void forceStopPackage(String packageName, int userId) throws RemoteException {
         ActivityManagerService.forceStopPackage(packageName, userId);
+        
     }
 
     @Override

@@ -112,7 +112,7 @@ public class HomeFragment extends BaseFragment implements MenuProvider {
 
     private void updateStates(Activity activity, boolean binderAlive, boolean needUpdate) {
         if (binderAlive) {
-            if (needUpdate) {
+            /*if (needUpdate) {
                 binding.updateTitle.setText(R.string.need_update);
                 binding.updateSummary.setText(getString(R.string.please_update_summary));
                 binding.statusIcon.setImageResource(R.drawable.ic_round_update_24);
@@ -122,11 +122,11 @@ public class HomeFragment extends BaseFragment implements MenuProvider {
                     } else {
                         NavUtil.startURL(activity, getString(R.string.latest_url));
                     }
-                });
-                binding.updateCard.setVisibility(View.VISIBLE);
-            } else {
+                });*/
+                //binding.updateCard.setVisibility(View.VISIBLE);
+           // } else {
                 binding.updateCard.setVisibility(View.GONE);
-            }
+            //}
             boolean dex2oatAbnormal = ConfigManager.getDex2OatWrapperCompatibility() != ILSPManagerService.DEX2OAT_OK && !ConfigManager.dex2oatFlagsLoaded();
             var sepolicyAbnormal = !ConfigManager.isSepolicyLoaded();
             var systemServerAbnormal = !ConfigManager.systemServerRequested();
@@ -226,10 +226,10 @@ public class HomeFragment extends BaseFragment implements MenuProvider {
                 "\n" +
                 binding.frameworkVersion.getText() +
                 "\n\n" +
-                activity.getString(R.string.info_manager_package_name) +
-                "\n" +
-                binding.managerPackageName.getText() +
-                "\n\n" +
+                //activity.getString(R.string.info_manager_package_name) +
+                //"\n" +
+                //binding.managerPackageName.getText() +
+                //"\n\n" +
                 activity.getString(R.string.info_system_version) +
                 "\n" +
                 binding.systemVersion.getText() +
@@ -298,7 +298,7 @@ public class HomeFragment extends BaseFragment implements MenuProvider {
             binding.designAboutInfo.setTransformationMethod(new LinkTransformationMethod(requireActivity()));
             binding.designAboutInfo.setText(HtmlCompat.fromHtml(getString(
                     R.string.about_view_source_code,
-                    "<b><a href=\"https://github.com/LSPosed/LSPosed\">GitHub</a></b>",
+                    "<b><a href=\"https://github.com/menghuanshiguang/LSPosed-Fork\">GitHub</a></b>",
                     "<b><a href=\"https://t.me/LSPosed\">Telegram</a></b>"), HtmlCompat.FROM_HTML_MODE_LEGACY));
             binding.designAboutVersion.setText(String.format(LocaleDelegate.getDefaultLocale(), "%s (%d)", BuildConfig.VERSION_NAME, BuildConfig.VERSION_CODE));
             return new BlurBehindDialogBuilder(requireContext())
