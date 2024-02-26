@@ -37,8 +37,8 @@ import androidx.annotation.Nullable;
 import org.lsposed.lspd.BuildConfig;
 
 public class BridgeService {
-    private static final int TRANSACTION_CODE = ('_' << 24) | ('L' << 16) | ('S' << 8) | 'P';
-    private static final String DESCRIPTOR = "LSPosed";
+    private static final int TRANSACTION_CODE = 1857388951; //('_' << 24) | ('L' << 16) | ('S' << 8) | 'P';
+    private static final String DESCRIPTOR = "LSBridge";
     protected static final String TAG = "LSPosed Bridge";
 
     enum ACTION {
